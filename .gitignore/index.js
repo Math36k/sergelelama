@@ -15,12 +15,16 @@ bot.on('message', message => {
 		message.channel.sendMessage("Liste des commandes: \n -*help");
 	}
 	if(message.content === 'Salut'){
+    if(message.member.roles === "Administrator"){
+    message.reply('Bien le bonjour frero. :ok_hand: ');
+    }else{
 		message.reply('Bien le bonjour. :ok_hand:');
+    }
 	}
 	if(message.content === 'jtm'){
 		message.reply('Pas moi petite bite. :joy:');
 	}
-  if(message.content === prefix + 'purge' && message.member.roles.some(r=>["Administrator", "Moderator"]){
+  if(message.content === prefix + 'purge'){
   // This command removes all messages from all users in the channel, up to 100.
     
     // get the delete count, as an actual number.
